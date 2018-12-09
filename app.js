@@ -10,8 +10,9 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-bookRouter = require('./Routes/bookRoutes')();
-app.use('/api', bookRouter);
+bookRouter = require('./Routes/bookRoutes')(Book);
+app.use('/api/books', bookRouter);
+app.use('/api/authors', authRouter);
 
 app.get('/', (req, res) => {
   res.send('welcome to my API!');
