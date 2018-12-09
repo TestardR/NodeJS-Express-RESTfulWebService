@@ -73,7 +73,7 @@ var routes = function(Book) {
         if (err) {
           res.status(500).send(err);
         } else {
-          res.status(204).send('Removed');
+          res.status(204).send('Item removed');
         }
       });
     });
